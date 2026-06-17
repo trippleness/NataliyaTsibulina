@@ -385,8 +385,36 @@
     }
     .mobile-menu-cta:hover { background: var(--teal-800) !important; color: var(--teal-50) !important; }
 
+    /* ── TABLET ── */
+    @media (min-width: 601px) and (max-width: 860px) {
+      html, body { overflow: auto; }
+      .hero {
+        grid-template-columns: 55% 45%;
+        height: calc(100vh - 68px);
+        padding: 24px 0 24px 24px;
+        gap: 0;
+      }
+      .hero-left {
+        padding-right: 32px;
+      }
+      .hero-right {
+        height: auto;
+        margin-left: 0;
+      }
+      .photo-inner {
+        border-radius: 16px 0 0 16px;
+      }
+      h1 { font-size: clamp(28px, 3.5vw, 40px); }
+      .badge-sessions { right: 0; }
+      .header-inner { padding: 0 24px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: block; }
+      .nav-cta { display: none; }
+    }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
+    @media (max-width: 600px) {
       html, body { overflow: auto; }
       .hero {
         grid-template-columns: 1fr;
