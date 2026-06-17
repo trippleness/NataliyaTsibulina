@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наталья Цибулина — клинический психолог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; overflow: hidden; }
+
+    :root {
+      --teal-50:  #E1F5EE;
+      --teal-100: #9FE1CB;
+      --teal-400: #1D9E75;
+      --teal-600: #0F6E56;
+      --teal-800: #085041;
+      --text:     #1A2B33;
+      --text-mid: #4A6572;
+      --text-light: #7A95A0;
+      --border:   #D8E4E8;
+      --bg:       #F8F6F3;
+      --white:    #FFFFFF;
+      --radius:   10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    nav a {
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal-800);
+      background: var(--teal-50);
+      border: 1px solid var(--teal-100);
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--teal-100); }
+
+    /* ── MAIN fills remaining height ── */
+    main {
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 0 32px 40px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 65% 35%;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+      padding-right: 48px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--teal-50);
+      border: 1px solid var(--teal-100);
+      border-radius: 20px;
+      padding: 5px 14px 5px 10px;
+      font-size: 13px;
+      color: var(--teal-600);
+      font-weight: 500;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--teal-600);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 3.8vw, 58px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--teal-600);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 15px 28px;
+      background: var(--teal-600);
+      color: var(--teal-50);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--teal-800); }
+
+    .btn-secondary {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 13px 20px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--text-mid); }
+    .btn-secondary svg { width: 16px; height: 16px; }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.4;
+      margin-top: 4px;
+      max-width: 140px;
+    }
+
+    /* ── RIGHT COLUMN (photo) ── */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      margin-left: -80px;
+    }
+
+    .photo-wrap {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 16px 0 0 16px;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 30% top;
+      display: block;
+    }
+
+    .badge-sessions {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      background: var(--white);
+      border: 1px solid var(--teal-100);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(15, 110, 86, 0.10);
+    }
+
+    .badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--teal-800);
+      line-height: 1;
+    }
+
+    .badge-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal-600);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      html, body { overflow: auto; }
+      .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 32px 24px 48px;
+        gap: 32px;
+      }
+      .hero-right { height: 340px; }
+      h1 { font-size: 36px; }
+      .badge-sessions { right: 10px; }
+      .header-inner { padding: 0 24px; }
+      nav a { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="logo-name">Наталья Цибулина</div>
+        <div class="logo-sub">Клинический психолог · Москва</div>
+      </div>
+      <nav>
+        <a href="#">Обо мне</a>
+        <a href="#">О методах</a>
+        <a href="#">Для кого</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Форматы и цены</a>
+      </nav>
+      <a class="nav-cta" href="https://t.me/NataliyaTsibulina" target="_blank">Записаться →</a>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <main>
+    <section class="hero">
+
+      <div class="hero-left">
+
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          Член АКПП · 20 лет практики · 550+ клиентов
+        </div>
+
+        <div class="hero-eyebrow">Тревожные расстройства · Измена и отношения</div>
+
+        <h1>
+          Помогу выйти из тревоги<br>
+          и пережить измену<br>
+          <em>без многолетней терапии</em>
+        </h1>
+
+        <p class="hero-sub">
+          Научно доказанные методы психотерапии для работы с паническими атаками, ОКР, ревностью, расставанием и другими кризисными состояниями.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="https://t.me/NataliyaTsibulina" target="_blank" class="btn-primary">Записаться на консультацию</a>
+          <button class="btn-secondary">
+            О методах
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val">554+</div>
+            <div class="stat-lbl">клиентов получили помощь</div>
+          </div>
+          <div>
+            <div class="stat-val">20 лет</div>
+            <div class="stat-lbl">практического опыта</div>
+          </div>
+          <div>
+            <div class="stat-val">до 10 сессий</div>
+            <div class="stat-lbl">для решения большинства запросов</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ФОТО -->
+      <div class="hero-right">
+        <div class="photo-wrap">
+          <div class="photo-inner">
+            <img src="https://i.ibb.co/4Ry8cFM4/image.jpg" alt="Наталья Цибулина">
+          </div>
+          <div class="badge-sessions">
+            <span class="badge-num">10</span>
+            <span class="badge-lbl">сессий</span>
+            <span style="font-size:10px;color:var(--teal-600);text-align:center;margin-top:3px;line-height:1.4;">краткосрочный<br>формат работы</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
