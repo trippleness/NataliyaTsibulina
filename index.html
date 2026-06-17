@@ -387,12 +387,13 @@
 
     /* ── TABLET ── */
     @media (min-width: 601px) and (max-width: 860px) {
-      html, body { overflow: auto; }
+      html, body { overflow: hidden; }
       .hero {
         grid-template-columns: 55% 45%;
-        height: calc(100vh - 68px);
+        height: 100%;
         padding: 24px 0 24px 24px;
         gap: 0;
+        align-items: stretch;
       }
       .hero-left {
         padding-right: 32px;
@@ -401,10 +402,13 @@
         height: auto;
         margin-left: 0;
       }
+      .photo-wrap {
+        height: 100%;
+      }
       .photo-inner {
         border-radius: 16px 0 0 16px;
       }
-      h1 { font-size: clamp(28px, 3.5vw, 40px); }
+      h1 { font-size: clamp(26px, 3vw, 38px); }
       .badge-sessions { right: 0; }
       .header-inner { padding: 0 24px; }
       nav { display: none; }
